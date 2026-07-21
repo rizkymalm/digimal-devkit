@@ -4,15 +4,62 @@
     "type": "module",
     "private": true,
     "main": "./dist/index.js",
-    "exports": {
-        ".": "./dist/index.js"
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rizkymalm/digimal-devkit.git"
     },
+    "bugs": {
+        "url": "https://github.com/rizkymalm/digimal-devkit/issues"
+    },
+    "homepage": "https://github.com/rizkymalm/digimal-devkit#readme",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js"
+        }
+    },
+    "license": "MIT",
+    "types": "./dist/index.d.ts",
+    "keywords": [
+        "eslint",
+        "eslint-config",
+        "react",
+        "typescript",
+        "tailwindcss",
+        "digimal"
+    ],
     "files": [
         "dist"
     ],
     "scripts": {
-        "build": "tsc",
+        "build": "tsup",
         "lint": "eslint src",
         "test": "echo \"No tests yet\""
+    },
+    "dependencies": {
+        "@eslint/js": "^9.36.0",
+        "eslint-plugin-import": "^2.32.0",
+        "eslint-plugin-jsx-a11y": "^6.10.2",
+        "eslint-plugin-react": "^7.37.5",
+        "eslint-plugin-react-hooks": "^7.1.1",
+        "eslint-plugin-react-refresh": "^0.5.3",
+        "eslint-plugin-simple-import-sort": "^14.0.0",
+        "eslint-plugin-tailwindcss": "^4.2.0",
+        "eslint-plugin-unused-imports": "^4.4.1",
+        "globals": "^17.7.0",
+        "typescript-eslint": "^8.65.0"
+    },
+    "peerDependencies": {
+        "eslint": "^9.36.0"
+    },
+    "devDependencies": {
+        "tsup": "^8.5.1",
+        "typescript": "^6.0.3"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "engines": {
+        "node": ">=20"
     }
 }
