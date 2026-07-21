@@ -1,13 +1,18 @@
 import globals from "globals";
 
-export const languageOptions = {
-  parserOptions: {
-    projectService: true,
-    ecmaVersion: "latest",
-    sourceType: "module",
-  },
-  globals: {
-    ...globals.browser,
-    ...globals.node,
-  },
-};
+import type { DefineConfigOptions } from "../types.js";
+
+export function createLanguageOptions(_options: DefineConfigOptions = {}) {
+  return {
+    parserOptions: {
+      projectService: true,
+      ecmaVersion: "latest",
+      sourceType: "module",
+    },
+
+    globals: {
+      ...globals.browser,
+      ...globals.node,
+    },
+  };
+}

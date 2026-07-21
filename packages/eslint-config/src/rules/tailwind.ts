@@ -1,4 +1,4 @@
-export const tailwinRules = {
+export const tailwindRules = {
   "tailwindcss/no-custom-classname": "off",
   "tailwindcss/classnames-order": "off",
   "tailwindcss/no-contradicting-classname": "error",
