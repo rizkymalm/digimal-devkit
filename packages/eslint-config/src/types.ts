@@ -5,6 +5,7 @@ export interface DefineConfigOptions {
   tailwind?: boolean;
   typeChecked?: boolean;
   prettier?: boolean;
+  accessibility?: boolean;
 }
 
 export type FlatConfig = Linter.Config;

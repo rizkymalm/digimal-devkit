@@ -7,18 +7,23 @@ import { createSettings } from "./configs/settings.js";
 import { createRules } from "./rules/index.js";
 
 import type { DefineConfigOptions } from "./types.js";
+import { defaultOptions } from "./helpers/default-options.js";
 
 export function defineConfig(
   options: DefineConfigOptions = {},
 ): Linter.Config[] {
+  const resolved = {
+    ...defaultOptions,
+    ...options,
+  };
   return [
-    createIgnores(options),
-    ...createPresets(options),
+    createIgnores(resolved),
+    ...createPresets(resolved),
     {
-      languageOptions: createLanguageOptions(options),
-      plugins: createPlugins(options),
-      settings: createSettings(options),
-      rules: createRules(options),
+      languageOptions: createLanguageOptions(resolved),
+      plugins: createPlugins(resolved),
+      settings: createSettings(resolved),
+      rules: createRules(resolved),
     },
   ];
 }

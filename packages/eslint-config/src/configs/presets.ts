@@ -7,25 +7,28 @@ import reactRefresh from "eslint-plugin-react-refresh";
 import jsxA11y from "eslint-plugin-jsx-a11y";
 
 import type { DefineConfigOptions } from "../types.js";
+import { defaultOptions } from "../helpers/default-options.js";
 
-export function createPresets({
-  react: useReact = true,
-  typeChecked = true,
-}: DefineConfigOptions = {}) {
+export function createPresets(options: DefineConfigOptions = {}) {
+  const resolved = {
+    ...defaultOptions,
+    ...options,
+  };
+
   return [
     js.configs.recommended,
 
     ...tseslint.configs.recommended,
 
-    ...(typeChecked ? tseslint.configs.recommendedTypeChecked : []),
+    ...(resolved.typeChecked ? tseslint.configs.recommendedTypeChecked : []),
 
-    ...(useReact
+    ...(resolved.react
       ? [
           react.configs.flat.recommended,
           reactHooks.configs.flat.recommended,
-          jsxA11y.flatConfigs.recommended,
           reactRefresh.configs.vite,
         ]
       : []),
+    ...(resolved.accessibility ? [jsxA11y.flatConfigs.recommended] : []),
   ];
 }
