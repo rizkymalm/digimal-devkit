@@ -2,7 +2,7 @@
     "name": "@digimal/eslint-config",
     "version": "0.1.0",
     "type": "module",
-    "private": true,
+    "private": false,
     "main": "./dist/index.js",
     "repository": {
         "type": "git",
