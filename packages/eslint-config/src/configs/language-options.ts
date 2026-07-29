@@ -11,7 +11,16 @@ export function createLanguageOptions(options: DefineConfigOptions = {}) {
       sourceType: "module",
       ...(options.typeChecked
         ? {
-            projectService: true,
+            projectService: {
+              allowDefaultProject: [
+                "*.js",
+                "*.mjs",
+                "*.cjs",
+                "eslint.config.js",
+                "*.config.js",
+                "*.config.mjs",
+              ],
+            },
           }
         : {}),
     },
