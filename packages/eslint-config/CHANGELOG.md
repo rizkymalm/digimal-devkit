@@ -1,17 +1,6 @@
-# Changelog
+## 0.1.1
 
-## 0.1.0
+### Fixed
 
-Initial release.
-
-### Features
-
-- ESLint Flat Config
-- React support
-- TypeScript support
-- Type-aware linting
-- Accessibility rules
-- Tailwind CSS rules
-- Import sorting
-- Unused imports
-- Configurable presets
+- Fixed TypeScript Project Service parsing errors when using `typeChecked: true` with config files (e.g. `eslint.config.js`) during Husky/lint-staged execution.
+- Added `allowDefaultProject` support for common JavaScript configuration files.
