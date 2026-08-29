@@ -140,6 +140,16 @@ export default defineConfig({
 });
 ```
 
+### React + Three JS
+
+```js
+export default defineConfig({
+  react: {
+    three: true,
+  },
+});
+```
+
 ### React + Tailwind
 
 ```js

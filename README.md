@@ -64,27 +64,27 @@ You can enable or disable individual presets.
 import { defineConfig } from "@digimal/eslint-config";
 
 export default defineConfig({
-    react: true,
-    tailwind: true,
-    typeChecked: true,
-    accessibility: true,
+  react: true,
+  tailwind: true,
+  typeChecked: true,
+  accessibility: true,
 });
 ```
 
 ### Available options
 
-| Option | Default | Description |
-| ------- | ------- | ----------- |
-| react | `true` | Enable React rules |
-| tailwind | `true` | Enable Tailwind CSS rules |
-| typeChecked | `true` | Enable type-aware TypeScript rules |
-| accessibility | `true` | Enable jsx-a11y rules |
+| Option        | Default | Description                        |
+| ------------- | ------- | ---------------------------------- |
+| react         | `true`  | Enable React rules                 |
+| tailwind      | `true`  | Enable Tailwind CSS rules          |
+| typeChecked   | `true`  | Enable type-aware TypeScript rules |
+| accessibility | `true`  | Enable jsx-a11y rules              |
 
 Example:
 
 ```js
 export default defineConfig({
-    tailwind: false,
+  tailwind: false,
 });
 ```
 
@@ -115,7 +115,7 @@ Enabled by default.
 
 ```js
 export default defineConfig({
-    typeChecked: true,
+  typeChecked: true,
 });
 ```
 
@@ -123,7 +123,7 @@ Disable it if you don't need typed linting.
 
 ```js
 export default defineConfig({
-    typeChecked: false,
+  typeChecked: false,
 });
 ```
 
@@ -135,8 +135,18 @@ export default defineConfig({
 
 ```js
 export default defineConfig({
-    react: true,
-    typeChecked: false,
+  react: true,
+  typeChecked: false,
+});
+```
+
+### React + Three JS
+
+```js
+export default defineConfig({
+  react: {
+    three: true,
+  },
 });
 ```
 
@@ -150,7 +160,7 @@ export default defineConfig();
 
 ```js
 export default defineConfig({
-    accessibility: false,
+  accessibility: false,
 });
 ```
 
