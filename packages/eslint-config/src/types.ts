@@ -1,7 +1,11 @@
 import type { Linter } from "eslint";
 
+interface ReactOptions {
+  three?: boolean;
+}
+
 export interface DefineConfigOptions {
-  react?: boolean;
+  react?: boolean | ReactOptions;
   tailwind?: boolean;
   typeChecked?: boolean;
   prettier?: boolean;

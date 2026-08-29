@@ -4,7 +4,7 @@ import { accessibilityRules } from "./accessibility.js";
 
 import { generalRules } from "./general.js";
 import { importRules } from "./imports.js";
-import { reactRules } from "./react.js";
+import { createReactRules } from "./react.js";
 import { tailwindRules } from "./tailwind.js";
 import { typeCheckedRules } from "./typescript-typechecked.js";
 import { typescriptRules } from "./typescript.js";
@@ -22,7 +22,7 @@ export function createRules(options: DefineConfigOptions = {}) {
     ...unusedImportRules,
     ...typescriptRules, // SELALU
     ...(resolved.typeChecked ? typeCheckedRules : {}), // OPSIONAL
-    ...(resolved.react ? reactRules : {}),
+    ...(resolved.react ? createReactRules(options) : {}),
     ...(resolved.tailwind ? tailwindRules : {}),
     ...(resolved.accessibility ? accessibilityRules : {}),
   };
